@@ -4,7 +4,7 @@ import { ErrorMessage } from "./components/ErrorMessage";
 import { ExpressionInput } from "./components/ExpressionInput";
 import { HistoryList } from "./components/HistoryList";
 import { ResultDisplay } from "./components/ResultDisplay";
-import { Unicorn } from "./components/Unicorn";
+import { Fox } from "./components/Fox";
 import type { CalculateResponse, HistoryEntry } from "./types/calculator";
 
 export default function App() {
@@ -63,7 +63,7 @@ export default function App() {
         <div className="orb orb-2" />
         <div className="orb orb-3" />
       </div>
-      <Unicorn />
+      <Fox />
       <main className="container">
         <h1>Expression Calculator</h1>
 

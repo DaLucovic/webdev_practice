@@ -419,8 +419,8 @@ h1 {
   100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
 }
 
-/* ── Unicorn ─────────────────────────────────────────────────────── */
-.unicorn-wrapper {
+/* ── Fox ─────────────────────────────────────────────────────────── */
+.fox-wrapper {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
@@ -429,78 +429,40 @@ h1 {
   will-change: transform;
 }
 
-.unicorn-inner {
-  position: relative;
-  display: inline-flex;
+.fox-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
-.unicorn-emoji {
-  font-size: 3.5rem;
-  line-height: 1;
-  animation: unicorn-jump 0.9s ease-in-out infinite alternate;
-  filter:
-    drop-shadow(0 0 8px rgba(124, 58, 237, 0.8))
-    drop-shadow(0 0 16px rgba(6, 182, 212, 0.5));
+.fox-rotate {
+  transform-origin: 50% 65%;
+  will-change: transform;
+}
+
+.fox-svg {
   display: block;
+  animation: fox-bob 2.6s ease-in-out infinite alternate;
+  filter:
+    drop-shadow(0 0 10px rgba(246, 133, 27, 0.7))
+    drop-shadow(0 0 24px rgba(228, 118, 27, 0.3));
 }
 
-.unicorn-shadow {
-  width: 2.5rem;
-  height: 0.5rem;
-  background: rgba(0, 0, 0, 0.45);
+.fox-shadow {
+  width: 54px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
-  animation: unicorn-shadow 0.9s ease-in-out infinite alternate;
+  animation: fox-shadow 2.6s ease-in-out infinite alternate;
 }
 
-.unicorn-sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  animation: sparkle-float 1.4s ease-in-out infinite;
-}
-
-.unicorn-sparkle.s1 {
-  background: #7c3aed;
-  top: 0;
-  right: -4px;
-  animation-delay: 0s;
-  --sx: 8px;
-  --sy: -12px;
-}
-
-.unicorn-sparkle.s2 {
-  background: #06b6d4;
-  top: 4px;
-  left: -6px;
-  animation-delay: 0.5s;
-  --sx: -10px;
-  --sy: -10px;
-}
-
-.unicorn-sparkle.s3 {
-  background: #fbbf24;
-  top: 50%;
-  right: -8px;
-  animation-delay: 1s;
-  --sx: 12px;
-  --sy: -8px;
-}
-
-@keyframes unicorn-jump {
+@keyframes fox-bob {
   from { transform: translateY(0); }
-  to   { transform: translateY(-20px); }
+  to   { transform: translateY(-10px); }
 }
 
-@keyframes unicorn-shadow {
-  from { transform: scaleX(1);   opacity: 0.45; }
-  to   { transform: scaleX(0.6); opacity: 0.15; }
-}
-
-@keyframes sparkle-float {
-  0%   { transform: translate(0, 0)                    scale(1) ; opacity: 1; }
-  100% { transform: translate(var(--sx), var(--sy))    scale(0) ; opacity: 0; }
+@keyframes fox-shadow {
+  from { transform: scaleX(1);    opacity: 0.4; }
+  to   { transform: scaleX(0.65); opacity: 0.15; }
 }
