@@ -8,6 +8,6 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3000:80"     # nginx listens on 80 inside; exposed as 3000 on the host
+      - "3001:80"     # nginx listens on 80 inside; exposed as 3000 on the host
     depends_on:
       - backend
