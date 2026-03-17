@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Tests — not needed in the production image
+tests/
+pytest.ini
+requirements-dev.txt
+
+# Frontend — built separately, not part of the backend image
+frontend/
+
+# Misc
+.env
+.git/
+*.md

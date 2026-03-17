@@ -1,0 +1,13 @@
+services:
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"   # host:container — FastAPI reachable at localhost:8000
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"     # nginx listens on 80 inside; exposed as 3000 on the host
+    depends_on:
+      - backend

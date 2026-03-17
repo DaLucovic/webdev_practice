@@ -1,0 +1,11 @@
+# Never copy these into the image — they're either regenerated or irrelevant
+node_modules/
+dist/
+
+# Environment files contain local overrides that should not be baked into the image
+.env
+.env.*
+
+# Editor and OS noise
+.vscode/
+.DS_Store
