@@ -51,25 +51,38 @@ export default function App() {
     }
   }
 
+  function handleSelect(expr: string) {
+    setExpression(expr);
+  }
+
   return (
-    <main className="container">
-      <h1>Expression Calculator</h1>
+    <>
+      <div className="bg">
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
+      </div>
+      <main className="container">
+        <h1>Expression Calculator</h1>
 
-      <ExpressionInput
-        value={expression}
-        isLoading={isLoading}
-        onChange={setExpression}
-        onSubmit={handleSubmit}
-      />
+        <ExpressionInput
+          value={expression}
+          isLoading={isLoading}
+          onChange={setExpression}
+          onSubmit={handleSubmit}
+        />
 
-      <ResultDisplay result={result} />
-      <ErrorMessage message={error} />
+        <ResultDisplay result={result} />
+        {/* key={error} causes React to remount on each new error, re-triggering the shake animation */}
+        <ErrorMessage key={error} message={error} />
 
-      <HistoryList
-        entries={history}
-        isClearing={isClearing}
-        onClear={handleClearHistory}
-      />
-    </main>
+        <HistoryList
+          entries={history}
+          isClearing={isClearing}
+          onClear={handleClearHistory}
+          onSelect={handleSelect}
+        />
+      </main>
+    </>
   );
 }
